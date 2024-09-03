@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opsi Jawaban</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Opsi Jawaban & Poin</h1>
+        <div id="optionContainer">
+            <div class="option">
+                <label>Opsi 1:</label>
+                <input type="number" placeholder="poin" required>
+                <input type="text" placeholder="deskripsi opsi" required>
+            </div>
+
+        </div>
+        <button class="add-button" onclick="tambahOpsi()">Tambah Opsi</button>
+    </div>
+
+    <script>
+        let option = 1; 
+
+        function tambahOpsi() {
+            option++;
+            const optionContainer = document.getElementById('optionContainer');
+            const newOption = document.createElement('div');
+            newOption.className = 'option';
+            newOption.innerHTML = `
+                <label>Opsi ${option}:</label>
+                <input type="number" placeholder="poin" required>
+                <input type="text" placeholder="deskripsi opsi" required>
+            `;
+            optionContainer.append(newOption);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Munculkan alert</button>
+    <div id="output"></div>
+    <script>
+        var alert = document.getElementById("button");
+        alert.addEventListener("click", function(){
+            var output = document.getElementById("output");
+            output.innerHTML="Danger! Alert akan tertutup dalam 5"
+            var number=5
+            var time = setInterval(function(){
+                number--;
+                output.innerHTML="Danger! Alert akan tertutup dalam" +number;
+                if(number<0){
+                    clearInterval(time)
+                    output.innerHTML="";
+                }
+            },1000)
+        })
+    </script>
+</body>
+</html>
